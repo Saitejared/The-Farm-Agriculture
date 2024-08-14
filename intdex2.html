@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            background-color: #f0edbd;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styles for tablets */
+        @media (min-width: 600px) {
+            .container {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        /* Styles for laptops and larger devices */
+        @media (min-width: 1024px) {
+            .container {
+                width: 70%;
+            }
+        }
+
+        /* Styles for mobile devices */
+        @media (max-width: 599px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+
+        header {
+            width: 100%;
+            height: 4rem;
+            background-color: rgb(170, 204, 75);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            height: 3rem;
+        }
+
+        .header-content {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .logo {
+            background-image: url("POAQUA (1).png");
+            background-size: cover;
+            width: 140px;
+            height: 50px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            border: 2px solid white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            padding-left: 900px;
+            margin-left: 50px;
+        }
+
+        nav ul li {
+            margin-right: 50px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+            border-color: #fff;
+        }
+
+        nav ul li a:hover {
+            color: #ccc;
+        }
+
+        /* Main content styles */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .account-details {
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+
+        .account-details h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .profile-photo {
+            width: 110px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .edit-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .edit-buttons button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-buttons button:hover {
+            background-color: #45a049;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+        }
+
+        .delete-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-input-label {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .file-input-label:hover {
+            background-color: #45a049;
+        }
+        /* Logout button styles */
+.logout-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Add some space between the buttons */
+}
+
+.logout-button:hover {
+    background-color: #d32f2f;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <h2>Account</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="login.html">Signin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="account-details">
+            <h1>Account Details</h1>
+            <div class="profile-photo" id="profilePhotoContainer">
+                <img id="profilePhoto" src="" alt="Profile Photo">
+            </div>
+            <div id="userAccount">
+                <!-- User details will be displayed here -->
+            </div>
+            <div class="edit-buttons">
+                <button id="editButton" class="edit-button" onclick="toggleEditMode()">Edit Profile Photo</button>
+                <button id="deleteButton" class="delete-button" onclick="deleteProfilePhoto()">Delete</button>
+                <button id="logoutButton" class="logout-button" onclick="logout()">Logout</button>
+                <input type="file" id="profilePhotoInput" class="file-input" accept="image/*" onchange="handleProfilePhotoChange(event)">
+                <label for="profilePhotoInput" class="file-input-label" id="chooseFileLabel">Choose File</label>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const userAccount = document.getElementById('userAccount');
+    const profilePhoto = document.getElementById('profilePhoto');
+    const profilePhotoContainer = document.getElementById('profilePhotoContainer');
+    const editButton = document.getElementById('editButton');
+    const deleteButton = document.getElementById('deleteButton');
+    const profilePhotoInput = document.getElementById('profilePhotoInput');
+    const chooseFileLabel = document.getElementById('chooseFileLabel');
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    if (loggedInUser) {
+        const userData = {
+            name: loggedInUser.name,
+            address: loggedInUser.address,
+            mobile: loggedInUser.mobile,
+            pincode: loggedInUser.pincode,
+            photo: loggedInUser.photo // Assuming 'photo' is a URL or base64 image string
+        };
+
+        userAccount.innerHTML = `
+            <p><strong>Name:</strong> ${userData.name}</p>
+            <p><strong>Address:</strong> ${userData.address}</p>
+            <p><strong>Mobile:</strong> ${userData.mobile}</p>
+            <p><strong>Pincode:</strong> ${userData.pincode}</p>
+        `;
+
+        if (userData.photo) {
+            profilePhoto.src = userData.photo;
+            profilePhotoContainer.style.display = 'block';
+            editButton.style.display = 'inline-block'; // Show edit button
+            deleteButton.style.display = 'inline-block'; // Show delete button
+            chooseFileLabel.style.display = 'none'; // Hide "Choose File" label when photo exists
+        } else {
+            profilePhoto.alt = "No profile photo available";
+            chooseFileLabel.style.display = 'block'; // Show "Choose File" label when no photo exists
+        }
+    } else {
+        userAccount.innerHTML = `<p>Please <a href="login.html">log in</a> to view your account details.</p>`;
+        profilePhotoContainer.style.display = 'none';
+        editButton.style.display = 'none';
+        deleteButton.style.display = 'none';
+        chooseFileLabel.style.display = 'none';
+    }
+});
+
+function toggleEditMode() {
+    const profilePhotoInput = document.getElementById('profilePhotoInput');
+    profilePhotoInput.click();
+}
+
+function deleteProfilePhoto() {
+    const profilePhoto = document.getElementById('profilePhoto');
+    const profilePhotoContainer = document.getElementById('profilePhotoContainer');
+    const editButton = document.getElementById('editButton');
+    const deleteButton = document.getElementById('deleteButton');
+    const chooseFileLabel = document.getElementById('chooseFileLabel');
+
+    profilePhoto.src = '';
+    profilePhoto.alt = 'No profile photo available';
+    profilePhotoContainer.style.display = 'none';
+    editButton.style.display = 'none';
+    deleteButton.style.display = 'none';
+    chooseFileLabel.style.display = 'block'; // Show "Choose File" label after deleting photo
+
+    // Remove the photo from local storage
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (loggedInUser) {
+        delete loggedInUser.photo;
+        localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
+    }
+}
+
+function handleProfilePhotoChange(event) {
+    const profilePhoto = document.getElementById('profilePhoto');
+    const profilePhotoContainer = document.getElementById('profilePhotoContainer');
+    const editButton = document.getElementById('editButton');
+    const deleteButton = document.getElementById('deleteButton');
+    const chooseFileLabel = document.getElementById('chooseFileLabel');
+
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+        const newPhoto = event.target.result;
+        profilePhoto.src = newPhoto;
+        profilePhotoContainer.style.display = 'block';
+        editButton.style.display = 'inline-block'; // Show edit button
+        deleteButton.style.display = 'inline-block'; // Show delete button
+        chooseFileLabel.style.display = 'none'; // Hide "Choose File" label after selecting photo
+
+        // Update the photo in local storage
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (loggedInUser) {
+            loggedInUser.photo = newPhoto; // Set the new photo
+            localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser)); // Save updated user data
+        }
+    };
+
+    reader.readAsDataURL(file);
+}
+
+function logout() {
+    // Remove user details from local storage
+    localStorage.removeItem('loggedInUser');
+
+    // Clear the user's details from the page
+    const userAccount = document.getElementById('userAccount');
+    const profilePhoto = document.getElementById('profilePhoto');
+    const profilePhotoContainer = document.getElementById('profilePhotoContainer');
+    const editButton = document.getElementById('editButton');
+    const deleteButton = document.getElementById('deleteButton');
+    const chooseFileLabel = document.getElementById('chooseFileLabel');
+
+    userAccount.innerHTML = "<p>Please <a href='login.html'>log in</a> to view your account details.</p>";
+    profilePhoto.src = "";
+    profilePhoto.alt = "No profile photo available";
+    profilePhotoContainer.style.display = 'none';
+    editButton.style.display = 'none';
+    deleteButton.style.display = 'none';
+    chooseFileLabel.style.display = 'none';
+
+    // Redirect to login page after logout
+    window.location.href = 'login.html';
+}
+
+    </script>
+</body>
+</html>
+
+

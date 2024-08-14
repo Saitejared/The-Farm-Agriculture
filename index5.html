@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Demo Call | The Farm Agriculture</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f0edbd;
+    }
+    header {
+        background: rgb(170, 204, 75);
+        color: black;
+        padding: 10px 0;
+        text-align: center;
+    }
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+    }
+    nav ul li {
+        padding: 10px 20px;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: black;
+        transition: color 0.3s ease;
+        padding-left: 210px;
+        width: auto;
+        height: 50px;
+    }
+    nav ul li a:hover {
+        color: #e24400;
+    }
+    main {
+        padding: 20px;
+        max-width: 800px;
+        margin: 20px auto;
+        background: black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        color: white;
+    }
+    h1, h2 {
+        color: black;
+    }
+    .intro, .how-to-schedule, .why-choose {
+        margin-bottom: 20px;
+    }
+    ul, ol {
+        margin: 10px 0 10px 20px;
+    }
+    button {
+        display: inline-block;
+        padding: 10px;
+        font-size: 16px;
+        color: #fff;
+        background: #28a745;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 5px;
+        margin: 5px 0;
+    }
+    button:hover {
+        background: #218838;
+    }
+    .schedule-call button {
+        width: 100%;
+        font-size: 18px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    label {
+        margin: 5px 0;
+    }
+    input, textarea, select {
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    input[type="datetime-local"] {
+        padding: 8px;
+        font-size: 16px;
+    }
+    textarea {
+        resize: vertical;
+        height: 100px;
+    }
+    form button {
+        align-self: flex-start;
+    }
+</style>
+<body>
+    <header>
+        <h1>Schedule a Demo Call</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <p>Experience the future of farming with The Farm Agriculture. Learn how our IoT-based solutions for automatic water level management and fertilization can revolutionize your farming practices. Schedule a free demo call to:</p>
+            <ul>
+                <li>Discover our wide range of products including fertilizers, seeds, and more.</li>
+                <li>See our IoT sensors and systems in action.</li>
+                <li>Understand how our technology can optimize your farming operations.</li>
+                <li>Get expert advice tailored to your specific needs.</li>
+            </ul>
+        </section>
+        <section class="how-to-schedule">
+            <h2>How to Schedule Your Demo Call:</h2>
+            <ol>
+                <li>
+                    <strong>Choose a Date and Time:</strong> 
+                    <input type="datetime-local" id="demoDateTime">
+                </li>
+                <li>
+                    <strong>Provide Your Details:</strong> 
+                    <form id="detailsForm">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <label for="crop">Type of Crop:</label>
+                        <input type="text" id="crop" name="crop" required>
+                        <label for="land">Type of Land:</label>
+                        <input type="text" id="land" name="land" required>
+                        <label for="acres">Number of Acres:</label>
+                        <input type="number" id="acres" name="acres" required>
+                        <label for="questions">Specific Questions or Areas of Interest:</label>
+                        <textarea id="questions" name="questions"></textarea>
+                        <label for="payment">Payment Method:</label>
+                        <select id="payment" name="payment" required>
+                            <option value="phonepe">PhonePe</option>
+                            <option value="gpay">GPay</option>
+                            <option value="netbanking">Net Banking</option>
+                        </select>
+                        <p>Demo Call Fee: ₹500</p>
+                        <button type="submit">Submit Details</button>
+                    </form>
+                </li>
+                <li>
+                    <strong>Join the Call:</strong> 
+                    <button id="joinCallButton">Join the Call</button>
+                </li>
+            </ol>
+        </section>
+        <section class="why-choose">
+            <h2>Why Choose The Farm Agriculture:</h2>
+            <ul>
+                <li><strong>Expert Guidance:</strong> Get personalized assistance from our knowledgeable team.</li>
+                <li><strong>Innovative Technology:</strong> See our advanced IoT solutions and understand their benefits.</li>
+                <li><strong>Comprehensive Solutions:</strong> Learn how our products and technology can be integrated to enhance your farming efficiency.</li>
+                <li><strong>Complete Guidance:</strong> We will explain A to Z about farming, ensuring you have all the knowledge needed to succeed.</li>
+            </ul>
+        </section>
+        <section class="schedule-call">
+            <button id="scheduleButton">Ready to take the next step? Schedule Your Demo Call Now!</button>
+        </section>
+    </main>
+    <script>
+        document.getElementById('detailsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Get the form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const crop = document.getElementById('crop').value;
+            const land = document.getElementById('land').value;
+            const acres = document.getElementById('acres').value;
+            const questions = document.getElementById('questions').value;
+            const payment = document.getElementById('payment').value;
+
+            // Replace the form with the submitted data
+            const formSection = document.querySelector('.how-to-schedule li:nth-child(2)');
+            formSection.innerHTML = `
+                <strong>Your Details:</strong>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone Number:</strong> ${phone}</p>
+                <p><strong>Type of Crop:</strong> ${crop}</p>
+                <p><strong>Type of Land:</strong> ${land}</p>
+                <p><strong>Number of Acres:</strong> ${acres}</p>
+                <p><strong>Specific Questions or Areas of Interest:</strong> ${questions}</p>
+                <p><strong>Payment Method:</strong> ${payment}</p>
+                <p><strong>Demo Call Fee:</strong> ₹500</p>
+            `;
+
+            alert('Details submitted successfully! We will reach out to you with further instructions.');
+        });
+
+        document.getElementById('joinCallButton').addEventListener('click', function() {
+            alert('Please check your email for the call link.');
+        });
+
+        document.getElementById('scheduleButton').addEventListener('click', function() {
+            document.getElementById('demoDateTime').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

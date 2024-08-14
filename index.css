@@ -1,0 +1,388 @@
+@media (min-width: 600px) {
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 599px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+.html{
+    display: flex;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0edbd;
+
+}
+
+
+header {
+    width: 100%;
+    background-color: rgb(170, 204, 75);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: auto;
+}
+
+.logo {
+    background-image: url("logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 140px;
+    margin-bottom: 90px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    flex-direction: row; /* Display links in a row on larger screens */
+}
+
+nav ul li {
+    margin-right: 20px;
+    margin-bottom: 140px;
+}
+
+@media (max-width: 599px) {
+    /* Style for fixed bottom navbar */
+    nav {
+        position: fixed; /* Fix the navbar to the bottom */
+        bottom: 0; /* Position it at the bottom of the viewport */
+        left: 0; /* Align it to the left edge */
+        width: 100%; /* Make it span the full width of the viewport */
+        background-color: rgb(170, 204, 75); /* Background color for the navbar */
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Optional: shadow for visual separation */
+        z-index: 1000; /* Ensure it stays on top of other content */
+    }
+
+    /* Style for the navbar list */
+    nav ul {
+        display: flex; /* Arrange items in a row */
+        flex-direction: row; /* Ensure items are in a row */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        list-style: none; /* Remove default list styles */
+        justify-content: center; /* Center the items horizontally */
+    }
+
+    /* Style for the list items */
+    nav ul li {
+        margin: 0 10px; /* Space items horizontally */
+    }
+    nav ul li a:hover {
+        color: white;
+    }
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+    border-color: #fff;
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+.header-content {
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-weight: auto;
+
+}
+
+
+.demo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: black;
+    width: 80%;
+    border-radius: 20px;
+    background-position: center;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.demo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.demo p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #997f1f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: darkgreen;
+}
+
+.overview-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+.detail-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Display as inline-block */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    cursor: pointer; /* Cursor pointer */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 10px;
+    width: 120px;
+}
+
+.detail-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+.overview-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    
+}
+
+.feature {
+    margin-bottom: 30px;
+}
+
+.feature i {
+    font-size: 3rem;
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1rem;
+}
+
+.product-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.product-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.product {
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 1rem;
+}
+
+.testimonial-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.testimonial-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.testimonial {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.testimonial p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.testimonial h4 {
+    font-size: 1rem;
+    color: #777;
+}
+
+footer {
+    background-color: rgb(170, 204, 75);
+    color: black;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly between sections */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 20px;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section .contact {
+    margin: 10px 0;
+}
+
+.footer-section .contact i {
+    margin-right: 10px;
+}
+
+.footer-section .socials a {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    color: black;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-section .socials a:hover {
+    color: rgb(170, 204, 75);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #00aced;
+}
+
+.footer-section input[type="email"] {
+    padding: 10px;
+    border: none;
+    margin-top: 10px;
+    width: calc(100% - 22px);
+}
+
+.footer-section button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #930f0f;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.footer-section button:hover {
+    background-color: rgb(170, 204, 75);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+  
+    margin-top: 20px;
+}
+
+.subscribe {
+    text-align: center;
+    background-color: black;
+    padding: 20px; /* Increase padding for better appearance */
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 30%; /* Increase width to make the subscribe section wider */
+    margin-left: auto; /* Center the subscribe section */
+    margin-right: auto; /* Center the subscribe section */
+    color: white;
+  
+}
+
+.boxe {
+    border-radius: 5px;
+    width: 40px;
+}

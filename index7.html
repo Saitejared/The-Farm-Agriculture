@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Quality Monitoring</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       body {
+    background-color: #f0edbd;
+    
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(170, 204, 75);
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e24400;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            padding-top: 100px;
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        form input[type="text"],
+        form input[type="tel"],
+        form input[type="email"],
+        form input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+        button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-left: 450px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+        .photos {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .sensor-img,
+        .dashboard-img {
+            width: 45%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+   
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-section .socials a {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-section .socials a:hover {
+    color: rgb(170, 204, 75);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Soil Quality Monitoring</h1>
+        <p>Check the quality of your soil with real-time data.</p>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="acc.html">Account</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="content">
+        <p>Welcome to our soil quality monitoring service. We provide real-time data to help you optimize your farming practices.</p>
+        
+        <h2>How It Works</h2>
+        <p>Our soil quality monitoring system uses IoT sensors placed in your fields to collect data on key soil metrics such as moisture levels, pH balance, temperature, and nutrient content.</p>
+        <p>This data is transmitted wirelessly to our platform where it is analyzed and presented to you through our user-friendly interface.</p>
+        
+        <h2>Benefits</h2>
+        <ul>
+            <li><strong>Optimized Farming:</strong> By understanding your soil's current conditions, you can make informed decisions about irrigation, fertilization, and crop selection.</li>
+            <li><strong>Resource Efficiency:</strong> Avoid overwatering or over-fertilizing by adjusting inputs based on real-time data, leading to cost savings and environmental benefits.</li>
+            <li><strong>Improved Yield:</strong> Maximize crop yield by ensuring your plants receive the optimal conditions they need to thrive.</li>
+            <li><strong>Sustainable Practices:</strong> Promote sustainable agriculture practices by reducing chemical usage and environmental impact.</li>
+        </ul>
+        
+        <!-- Form to capture booking details -->
+        <form id="bookingForm">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" required><br>
+
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" name="pincode" required pattern="[0-9]{6}"><br>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required><br>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="mobile">Mobile:</label>
+            <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}"><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="photos">
+            <img src="soilsen.jpg" alt="IoT Soil Sensor" class="sensor-img">
+            <img src="nut.jpg" alt="Dashboard Interface" class="dashboard-img">
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-section">
+            <h2>The Farm Agriculture</h2>
+            <p>Smart Solutions for Smart Farms</p>
+            <div class="contact">
+                <i class="fa-solid fa-phone"></i> +1 234 567 890
+                <i class="fa-solid fa-envelope"></i> info@farm.com
+            </div>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2024 Soil Quality Monitoring Service. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for handling form submission inside the page
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Fetch input field values
+            const date = document.getElementById('date').value;
+            const place = document.getElementById('place').value;
+            const pincode = document.getElementById('pincode').value;
+            const state = document.getElementById('state').value;
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const email = document.getElementById('email').value;
+
+            // Create an object to store booking details
+            const bookingDetails = {
+                date,
+                place,
+                pincode,
+                state,
+                name,
+                mobile,
+                email
+            };
+
+            // Store bookingDetails in localStorage (simulating backend storage)
+            localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
+
+            // Display submitted data below the form or in a message
+            const submissionMessage = document.createElement('div');
+            submissionMessage.innerHTML = `
+                <h3>Booking Details:</h3>
+                <p><strong>Date:</strong> ${date}</p>
+                <p><strong>Place:</strong> ${place}</p>
+                <p><strong>Pincode:</strong> ${pincode}</p>
+                <p><strong>State:</strong> ${state}</p>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Mobile:</strong> ${mobile}</p>
+                <p><strong>Email:</strong> ${email}</p>
+            `;
+
+            const contentSection = document.querySelector('.content');
+            contentSection.appendChild(submissionMessage);
+
+            // Optionally, clear the form fields after submission
+            document.getElementById('bookingForm').reset();
+        });
+    </script>
+</body>
+</html>

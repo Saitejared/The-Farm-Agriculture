@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login / Sign Up Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+/* Styles for tablets */
+@media (min-width: 600px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* Styles for laptops and larger devices */
+@media (min-width: 1024px) {
+  .container {
+    width: 70%;
+  }
+}
+
+/* Styles for mobile devices */
+@media (max-width: 599px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+    .form-container {
+        background-color:black;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .form-container h2 {
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .form-container input[type="email"],
+    .form-container input[type="password"],
+    .form-container input[type="text"],
+    .form-container input[type="submit"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    .form-container input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 70px;
+    }
+
+    .form-container input[type="submit"]:hover {
+        background-color: gold;
+    }
+
+    .switch-form {
+        margin-top: 10px;
+        font-size: 14px;
+        color: white;
+    }
+
+    .switch-form a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .switch-form a:hover {
+        text-decoration: underline;
+    }
+
+    /* Hide signup form by default */
+    #signUpForm {
+        display: none;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .close-btn {
+        background-color: #ccc;
+        color: #333;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .close-btn:hover {
+        background-color: #c41414;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Login</h2>
+    <button class="close-btn" onclick="closeCart()">x</button>
+    <form id="loginForm" onsubmit="login(event);">
+        <input type="email" id="loginUsername" name="username" placeholder="Username (email)" required>
+        <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+        <div id="loginError" class="error-message"></div>
+    </form>
+    <form id="signUpForm" onsubmit="signUp(event);">
+        <input type="email" id="signUpUsername" name="username" placeholder="Username (email)" required>
+        <input type="password" id="signUpPassword" name="password" placeholder="Password" required>
+        <input type="text" id="signUpName" name="name" placeholder="Full Name" required>
+        <input type="text" id="signUpAddress" name="address" placeholder="Address" required>
+        <input type="text" id="signUpPincode" name="pincode" placeholder="Pincode" required>
+        <input type="text" id="signUpMobile" name="mobile" placeholder="Mobile Number" required>
+        <input type="submit" value="Sign Up">
+        <div id="signUpError" class="error-message"></div>
+    </form>
+    <div class="switch-form">
+        <p>Don't have an account? <a href="#" id="goToSignUp">Sign up</a></p>
+        <p>Already have an account? <a href="#" id="goToLogin">Login</a></p>
+    </div>
+</div>
+
+<script>
+    // Switch between login and signup forms
+    document.getElementById("goToSignUp").onclick = function () {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("signUpForm").style.display = "block";
+    };
+
+    document.getElementById("goToLogin").onclick = function () {
+        document.getElementById("signUpForm").style.display = "none";
+        document.getElementById("loginForm").style.display = "block";
+    };
+
+    // Function to validate email format
+    function isValidEmail(email) {
+        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return pattern.test(email);
+    }
+
+    // Login function
+    function login(event) {
+        event.preventDefault();
+        const username = document.getElementById("loginUsername").value.trim();
+        const password = document.getElementById("loginPassword").value.trim();
+        
+        if (!isValidEmail(username)) {
+            document.getElementById("loginError").textContent = "Please enter a valid email address";
+            return;
+        }
+
+        if (password) {
+            // Simulate successful login and save user data to localStorage
+            const user = { email: username };
+            localStorage.setItem('loggedInUser', JSON.stringify(user));
+            alert("Login successful");
+            redirectToAccountPage(); // Redirect to account page after login
+        } else {
+            document.getElementById("loginError").textContent = "Please fill in all fields";
+        }
+    }
+
+    // Sign up function
+    function signUp(event) {
+        event.preventDefault();
+        const username = document.getElementById("signUpUsername").value.trim();
+        const password = document.getElementById("signUpPassword").value.trim();
+        const name = document.getElementById("signUpName").value.trim();
+        const address = document.getElementById("signUpAddress").value.trim();
+        const pincode = document.getElementById("signUpPincode").value.trim();
+        const mobile = document.getElementById("signUpMobile").value.trim();
+
+        if (!isValidEmail(username)) {
+            document.getElementById("signUpError").textContent = "Please enter a valid email address";
+            return;
+        }
+
+        // Simulate successful sign up and save user data to localStorage
+        const user = { 
+            email: username,
+            name: name,
+            address: address,
+            pincode: pincode,
+            mobile: mobile
+        };
+        localStorage.setItem('loggedInUser', JSON.stringify(user));
+        alert("Sign up successful");
+        redirectToAccountPage(); // Redirect to account page after sign up
+    }
+
+    // Redirect to account page
+    function redirectToAccountPage() {
+        window.location.href = "acc.html";
+    }
+
+    // Close button action (for demonstration)
+    function closeCart() {
+        window.location.href = 'mypage.html'; // Replace with your actual home page URL
+    }
+</script>
+
+</body>
+</html>

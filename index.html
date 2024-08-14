@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autofarm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <div class="header-content">
+            <h1>The Farm Agriculture</h1>
+            <h4>Smart Solutions for Smart Farms</h4>
+        </div>
+        <nav>
+            
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index2.html">Account</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <!-- Language selection dropdown -->
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="te">తెలుగు</option>
+            <option value="hi">हिन्दी</option>
+        </select>
+    </header>
+
+    <div class="demo">
+        <h2>Smart Solutions for Smart Farms</h2>
+        <p>Manage your farm from soil quality to harvesting with our IoT solutions.</p>
+        <button class="cta-button" onclick="window.location.href='index5.html';">Schedule a Demo Call</button>
+    </div>
+    <div class="overview-section">
+        <h2>Our IoT Farming Solutions</h2>
+        <div class="feature">
+            <i class="fas fa-seedling"></i>
+            <h3>Soil Quality Monitoring</h3>
+            <p>Check the quality of your soil with real-time data.</p>
+            <button class="detail-button" onclick="window.location.href='index7.html';">Details</button>
+        </div>
+        <div class="feature">
+            <i class="fas fa-tint"></i>
+            <h3>Automated Watering</h3>
+            <p>Automatically manage water levels to ensure optimal growth.</p>
+            <button class="detail-button" onclick="window.location.href='index3.html';">Details</button>
+        </div>
+        <div class="feature">
+            <i class="fas fa-leaf"></i>
+            <h3>Fertilization Control</h3>
+            <p>Automate fertilization to provide the right nutrients at the right time.</p>
+            <button class="detail-button" onclick="window.location.href='index6.html';">Details</button>
+        </div>
+        <div class="feature">
+            <i class="fas fa-tractor"></i>
+            <h3>Machinery Management</h3>
+            <p>Monitor and control farming machinery for efficient operations.</p>
+            <button class="detail-button" onclick="showDetails('soil')">Details</button>
+        </div>
+    </div>
+    <div class="product-section">
+        <h2>Explore Our Products</h2>
+        <div class="product">
+            <img src="seeds.jpg" alt="Seeds">
+            <h3>High-Quality Seeds</h3>
+            <p>Discover a variety of seeds for all types of crops.</p>
+            <button class="cta-button" onclick="window.location.href='seeds.html';">Shop Now</button>
+        </div>
+        <div class="product">
+            <img src="Fertilizers.jpeg" alt="Fertilizers">
+            <h3>Organic Fertilizers</h3>
+            <p>Buy organic fertilizers to boost your crop yield.</p>
+            <button class="cta-button" onclick="window.location.href='fertilizers.html';">Shop Now</button>
+        </div>
+        <div class="product">
+            <img src="water pump.jpg" alt="Machinery">
+            <h3>Farming Machinery</h3>
+            <p>Find the best machinery for efficient farming.</p>
+            <button class="cta-button" onclick="window.location.href='machinery.html';">Shop Now</button>
+        </div>
+    </div>
+    <div class="testimonial-section">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"Using Autofarm's IoT solutions has transformed my farm. The automated watering system is a game-changer!"</p>
+            <h4>- Farmer John</h4>
+        </div>
+        <div class="testimonial">
+            <p>"The soil quality monitoring system helps me maintain the best conditions for my crops. Highly recommend!"</p>
+            <h4>- Farmer Jane</h4>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>The Farm Agriculture</h2>
+                <p>Smart Solutions for Smart Farms</p>
+                <div class="contact">
+                    <i class="fa-solid fa-phone"></i> +1 234 567 890
+                    <i class="fa-solid fa-envelope"></i> info@farm.com
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section help">
+                <h2>Help</h2>
+                <ul>
+                    <li><a href="account.html">Your Account</a></li>
+                    <li><a href="shipping.html">Shipping Rates & Policies</a></li>
+                    <li><a href="customer-service.html">Returns & Replacements</a></li>
+                    <li><a href="manage.html">Manage Your Content and Devices</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </div>
+            <div class="footer-section about-us">
+                <h2>About Us</h2>
+                <ul>
+                    <li><a href="story.html">Our Story</a></li>
+                    <li><a href="mission.html">Mission & Values</a></li>
+                    <li><a href="career.html">Careers</a></li>
+                    <li><a href="sustainability.html">Sustainability</a></li>
+                    <li><a href="press.html">Press</a></li>
+                </ul>
+            </div>
+        </div>
+       <div class="footer-section subscribe">
+    <h2>Subscribe</h2>
+    <p>Get the latest updates and offers.</p>
+    <button class="subscribeBtn" onclick="window.location.href='sub.html';">Subscribe</button>
+    
+</div>
+
+        <div class="footer-bottom">
+            &copy; 2024 Agriculture | Designed by The Farm Agriculture Team
+        </div>
+    </footer>
+    <script>
+        // Language data
+        function showDetails(feature) {
+        // Example: Show detailed information based on feature clicked
+        switch (feature) {
+            case 'soil':
+                alert("Soil Quality Monitoring: Check the quality of your soil with real-time data.");
+                break;
+            case 'watering':
+                alert("Automated Watering: Automatically manage water levels to ensure optimal growth.");
+                break;
+            // Add cases for other features as needed
+            default:
+                break;
+        }
+    }
+var data = {
+    'en': {
+        'header-title': 'The Farm Agriculture',
+        'header-text': 'Smart Solutions for Smart Farms',
+        'demo-section-title': 'Smart Solutions for Smart Farms',
+        'demo-section-text': 'Manage your farm from soil quality to harvesting with our IoT solutions.',
+        'overview-section-title': 'Our IoT Farming Solutions',
+        'feature-1-title': 'Soil Quality Monitoring',
+        'feature-1-text': 'Check the quality of your soil with real-time data.',
+        'feature-2-title': 'Automated Watering',
+        'feature-2-text': 'Automatically manage water levels to ensure optimal growth.',
+        'feature-3-title': 'Fertilization Control',
+        'feature-3-text': 'Automate fertilization to provide the right nutrients at the right time.',
+        'feature-4-title': 'Machinery Management',
+        'feature-4-text': 'Monitor and control farming machinery for efficient operations.',
+        'products-section-title': 'Explore Our Products',
+        'product-1-title': 'High-Quality Seeds',
+        'product-1-text': 'Discover a variety of seeds for all types of crops.',
+        'product-2-title': 'Organic Fertilizers',
+        'product-2-text': 'Buy organic fertilizers to boost your crop yield.',
+        'product-3-title': 'Farming Machinery',
+        'product-3-text': 'Find the best machinery for efficient farming.',
+        'testimonial-section-title': 'What Our Customers Say',
+        'testimonial-1': '"Using Autofarm\'s IoT solutions has transformed my farm. The automated watering system is a game-changer!" - Farmer John',
+        'testimonial-2': '"The soil quality monitoring system helps me maintain the best conditions for my crops. Highly recommend!" - Farmer Jane',
+        'footer-text': '&copy; 2024 The Farm Agriculture. All rights reserved.',
+        'privacy-link': 'Privacy Policy',
+        'terms-link': 'Terms of Service'
+    },
+    'te': {
+        'header-title': 'ద ఫార్మ్ అగ్రికల్చర్',
+        'header-text': 'స్మార్ట్ ఫార్మ్స్ కోసం స్మార్ట్ సమాధానాలు',
+        'demo-section-title': 'స్మార్ట్ ఫార్మ్స్ కోసం స్మార్ట్ సమాధానాలు',
+        'demo-section-text': 'మీ ఫార్మ్ ను మణువు గుణం నుండి శేఖరణ వరకు మా ఐఒటి సమాధానాలతో నిర్వహించండి.',
+        'overview-section-title': 'మా ఐఒటి ఫార్మింగ్ సమాధానాలు',
+        'feature-1-title': 'మణువు గుణం మానిటరింగ్',
+        'feature-1-text': 'వినూతన డేటాతో మీ మణువు గుణం నిర్వహించండి.',
+        'feature-2-title': 'స్వయంచాలక నీరు పోషణ',
+        'feature-2-text': 'అప్టిమల్ గ్రోత్ ఖాతా నిర్వహించడానికి స్వయంచాలకంగా నీరు మట్టించండి.',
+        'feature-3-title': 'పరిపక్వ పరిమాణ నియంత్రణ',
+        'feature-3-text': 'సమయంలో సరికొత్త పోషణను అందించడానికి పరిపక్వత నియంత్రించండి.',
+        'feature-4-title': 'యంత్రాల నిర్వహణ',
+        'feature-4-text': 'క్రిషి కార్యకలాపాల కోసం మానిటర్ మరియు నిర్వహించండి.',
+        'products-section-title': 'మా ఉత్పన్నాలను అన్వేషించండి',
+        'product-1-title': 'అద్భుతమైన విత్తనాలు',
+        'product-1-text': 'అన్ని రకాల పంటలకు వివిధ విత్తనాలను ప్రకటించండి.',
+        'product-2-title': 'జైవ పరిపక్వతలు',
+        'product-2-text': 'మీ పంట ప్రతిపరిమితిని పెంచడానికి జైవ పరిపక్వతలను కొనుగోలు చేయండి.',
+        'product-3-title': 'కృషి యంత్రాలు',
+        'product-3-text': 'క్రిషికి ప్రభావశాలు లభ్యమైన శ్రేష్ఠ యంత్రాలను కనుగొనండి.',
+        'testimonial-section-title': 'మేము గ్రాహకులు ఎందుకు అనాలు',
+        'testimonial-1': '"ఆటోఫార్మ్ ఐఒటి సమాధానాలు ఉపయోగించినప్పుడు నా వ్యాపారం మార్చిపోయింది. ఆటోమేటెడ్ నీరు నియంత్రణ వ్యవస్థ గేమ్-చేంజర్!" - రైతు జాన్',
+        'testimonial-2': '"మణువు గుణం మానిటర్ వ్యవస్థ నా పంటల మాట్లాడానికి సహాయపడుతుంది. హైలీ శిఫార్!" - రైతు జేన్',
+        'footer-text': '&copy; 2024 ద ఫార్మ్ అగ్రికల్చర్. అన్ని హక్కులు పరిమితంగా.',
+        'privacy-link': 'గోప్యతా విధిలు',
+        'terms-link': 'సేవా నిబంధనలు'
+    },
+    'hi': {
+        'header-title': 'द फार्म एग्रीकल्चर',
+        'header-text': 'स्मार्ट फार्मों के लिए स्मार्ट समाधान',
+        'demo-section-title': 'स्मार्ट फार्मों के लिए स्मार्ट समाधान',
+        'demo-section-text': 'हमारे ऐओटी समाधानों के साथ अपनी खेत का प्रबंधन करें, मिटाएं सभी खेत की चुनौतियां।',
+        'overview-section-title': 'हमारे आईओटी फार्मिंग समाधान',
+        'feature-1-title': 'मिट्टी गुणवत्ता मॉनिटरिंग',
+        'feature-1-text': 'रियल-टाइम डेटा के साथ अपनी मिट्टी की गुणवत्ता की जांच करें।',
+        'feature-2-title': 'स्वचालित पानी संचालन',
+        'feature-2-text': 'ऑप्टिमल विकास सुनिश्चित करने के लिए स्वचालित जल स्तरों का प्रबंधन करें।',
+        'feature-3-title': 'उर्वरक नियंत्रण',
+        'feature-3-text': 'समय पर सही पोषण प्रदान करने के लिए उर्वरकों को स्वचालित करें।',
+        'feature-4-title': 'मशीनरी मैनेजमेंट',
+        'feature-4-text': 'दक्ष कार्यकलाप के लिए कृषि मशीनरी का मॉनिटर और नियंत्रण करें।',
+        'products-section-title': 'हमारे उत्पादों का अन्वेषण करें',
+        'product-1-title': 'उच्च गुणवत्ता वित्तीय',
+        'product-1-text': 'सभी प्रकार के फसलों के लिए विभिन्न वित्तीय के बीज खोजें।',
+        'product-2-title': 'कार्बनिक उर्वरक',
+        'product-2-text': 'अपनी फसल उत्पादन को बढ़ाने के लिए कार्बनिक उर्वरक खरीदें।',
+        'product-3-title': 'कृषि मशीनरी',
+        'product-3-text': 'दक्ष कृषि के लिए सर्वश्रेष्ठ मशीनरी खोजें।',
+        'testimonial-section-title': 'हमारे ग्राहकों के विचार',
+        'testimonial-1': '"आईओटी तंत्र समाधान का उपयोग करने से मेरी खेती में बदलाव आया है। स्वचालित पानी प्रणाली एक गेम बदलने वाला है!" - किसान जॉन',
+        'testimonial-2': '"मिट्टी गुणवत्ता मॉनिटरिंग सिस्टम मेरे फसल के लिए सर्वश्रेष्ठ स्थितियों को बनाए रखने में मदद करता है। सराहना करता हूँ!" - किसान जेन',
+        'footer-text': '&copy; 2024 द फार्म एग्रीकल्चर। सभी अधिकार सुरक्षित हैं।',
+        'privacy-link': 'गोपनीयता नीति',
+        'terms-link': 'सेवा शर्तें'
+    }
+};
+
+// Function to change language
+function changeLanguage(lang) {
+    var elements = document.querySelectorAll('[id]');
+    elements.forEach(element => {
+        var id = element.id;
+        if (data[lang] && data[lang][id]) {
+            element.textContent = data[lang][id];
+        } else {
+            console.warn(`Translation not found for id: ${id}`);
+        }
+    });
+}
+
+// Initial language setup
+changeLanguage('en');
+
+// Event listeners for language selection
+document.getElementById('select-language').addEventListener('change', function() {
+    var selectedLang = this.value;
+    changeLanguage(selectedLang);
+});
+function toggleMenu() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('show');
+}
+
+
+
+
+    </script>
+</body>
+</html>
